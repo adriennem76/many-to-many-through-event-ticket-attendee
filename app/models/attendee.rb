@@ -1,4 +1,25 @@
 class Attendee
+    @@all = []
+
+    attr_reader :name, :age
+
+    def initialize (name, age)
+        @name = name
+        @age = age
+        @@all << self
+    end
+
+    def events 
+        Ticket.all.select {|ticket| ticket.attendee == self}
+    end
+
+    def money_spent
+        self.events.sum {|ticket| ticket.event.ticket_price}
+    end
+
+    def self.all
+        @@all
+    end
 end
 
 # Attendee.all

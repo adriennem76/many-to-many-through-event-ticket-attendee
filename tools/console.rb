@@ -14,9 +14,12 @@ lucy = Attendee.new("Lucy", 22)
 george = Attendee.new("George", 24)
 miles = Attendee.new("Miles", 18)
 
-concert = Event.new("concert", 100000, 50)
-play = Event.new("play", 50000, 20)
-poetry = Event.new("poetry", 1, 5)
+venue1 = Venue.new("stadium", "D.C.", 1500)
+venue2 = Venue.new("blackbox", "Baltimore", 500)
+
+concert = Event.new("concert", 100000, 50, venue1)
+play = Event.new("play", 50000, 20, venue2)
+poetry = Event.new("poetry", 1, 5, venue2)
 
 ticket1 = Ticket.new(lucy, play)
 ticket2 = Ticket.new(lucy, concert)
@@ -25,6 +28,6 @@ ticket4 = Ticket.new(george, play)
 ticket5 = Ticket.new(george, poetry)
 
 #The variable `lucy` will point to an instance of a new attendee
-
+venue1.guest_lists
 binding.pry
 0 #leave this here to ensure binding.pry isn't the last line

@@ -2,12 +2,13 @@ class Event
 
     @@all = []
 
-    attr_reader :name, :total_cost, :ticket_price
+    attr_reader :name, :total_cost, :ticket_price, :venue
 
-    def initialize (name, total_cost, ticket_price)
+    def initialize (name, total_cost, ticket_price, venue)
         @name = name
         @total_cost = total_cost
         @ticket_price = ticket_price
+        @venue = venue
         @@all << self
     end
 
